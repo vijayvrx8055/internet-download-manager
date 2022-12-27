@@ -23,13 +23,16 @@ public class DownloadThread extends Thread {
 		// download logic
 		try {
 			Files.copy(new URL(this.fileInfo.getUrl()).openStream(),
-					Paths.get(this.fileInfo.getPath().get()));
+					Paths.get(this.fileInfo.getPath()));
 		}catch (Exception e) {
 			this.fileInfo.setStatus("FAILED");
+			System.out.println("Downloading Error...");
 			e.printStackTrace();
 		}
 		this.downloadManager.updateUI(this.fileInfo);
-		
+		System.out.println("DONE");
+		this.fileInfo.setAction("COMPLETED");
+		this.fileInfo.setStatus("DONE");
 	}
 
 }

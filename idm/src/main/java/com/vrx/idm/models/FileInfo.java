@@ -1,45 +1,45 @@
 package com.vrx.idm.models;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class FileInfo {
 
-	private SimpleIntegerProperty index  = new SimpleIntegerProperty();
-	private SimpleStringProperty name = new SimpleStringProperty();
-	private String url = "";
-	private SimpleStringProperty status = new SimpleStringProperty(); // 'DOWNLOADING','DONE','STARTING'
-	private SimpleStringProperty action = new SimpleStringProperty();
-	private SimpleStringProperty path = new SimpleStringProperty();
+	private StringProperty index  = new SimpleStringProperty();
+	private StringProperty name = new SimpleStringProperty();
+	private StringProperty url = new SimpleStringProperty();
+	private StringProperty status = new SimpleStringProperty(); // 'DOWNLOADING','DONE','STARTING'
+	private StringProperty action = new SimpleStringProperty();
+	private StringProperty path = new SimpleStringProperty();
 
-	public FileInfo(int index, String name, String url, String status, String action, String path) {
+	public FileInfo(String index, String name, String url, String status, String action, String path) {
 		this.index.set(index);
 		this.name.set(name);
-		this.url = url;
+		this.url.set(url);;
 		this.status.set(status);
 		this.action.set(action);
 		this.path.set(path);
 	}
 
-	public SimpleStringProperty getPath() {
-		return path;
+	public String getPath() {
+		return path.get();
 	}
 
-	public void setPath(SimpleStringProperty path) {
-		this.path = path;
+	public void setPath(String path) {
+		this.path.set(path);
 	}
 
-	public SimpleIntegerProperty getIndex() {
-		return index;
+	public String getIndex() {
+		return index.get();
 	}
 
-	public void setIndex(int index) {
-		this.index.set(index);
+	public void setIndex(String index) {
+		 this.index.set(index);
 		;
 	}
 
-	public SimpleStringProperty getName() {
-		return name;
+	public String getName() {
+		return name.get();
 	}
 
 	public void setName(String name) {
@@ -48,15 +48,15 @@ public class FileInfo {
 	}
 
 	public String getUrl() {
-		return url;
+		return url.get();
 	}
 
 	public void setUrl(String url) {
-		this.url = url;
+		this.url.set(url);;
 	}
 
-	public SimpleStringProperty getStatus() {
-		return status;
+	public String getStatus() {
+		return status.get();
 	}
 
 	public void setStatus(String status) {
@@ -64,8 +64,8 @@ public class FileInfo {
 		;
 	}
 
-	public SimpleStringProperty getAction() {
-		return action;
+	public String getAction() {
+		return action.get();
 	}
 
 	public void setAction(String action) {
